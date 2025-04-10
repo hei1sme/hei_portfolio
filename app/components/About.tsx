@@ -59,12 +59,14 @@ const About: React.FC = () => {
             <div className="max-w-3xl mx-auto w-full text-center md:text-left">
               <motion.p 
                 className="text-base mb-6 text-gray-300 leading-relaxed"
+                style={{ textAlign: "justify" }}
                 custom={0} variants={textVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
               >
                 Currently pursuing a degree in Artificial Intelligence at FPT University Ho Chi Minh City, I am passionate about leveraging intelligent systems to address real-world challenges. My studies often involve applying concepts like Computer Vision, AIoT, and Reinforcement Learning to optimize urban systems such as traffic flow.
               </motion.p>
               <motion.p 
                 className="text-base mb-8 text-gray-300 leading-relaxed"
+                style={{ textAlign: "justify" }}
                 custom={1} variants={textVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
               >
                 Proficient in Python and grounded in machine learning fundamentals, I am committed to continuous learning and aspire to contribute to impactful AI research. I aim to tackle diverse challenges and make a positive difference through technology while actively seeking opportunities to grow and apply my skills.
