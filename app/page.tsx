@@ -9,7 +9,6 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
-import CustomCursor from './components/CustomCursor';
 import VerticalNavigation from './components/VerticalNavigation';
 import Footer from './components/Footer';
 
@@ -46,8 +45,7 @@ export default function Home() {
   };
 
   return (
-    <main className="cursor-none relative bg-black">
-      <CustomCursor />
+    <main className="relative bg-black">
       <EntranceAnimation onAnimationComplete={() => setIsEntranceComplete(true)} />
       
       {/* Conditionally render main content */}
@@ -55,7 +53,7 @@ export default function Home() {
         <>
           <VerticalNavigation />
           {/* Main content wrapper with padding to avoid navbar */}
-          <div className="pl-20">
+          <div className="pt-16 md:pt-0 md:pl-20">
             {/* Hero section - full width within the padded area */}
             <motion.div
               id="home"
@@ -126,12 +124,11 @@ export default function Home() {
             >
               <Contact />
             </motion.div>
-            
-            {/* Footer - full width within the padded area */}
-            <div className="pr-4"> {/* Right padding */} 
-               <Footer />
-            </div>
-          </div> 
+          </div> {/* End of the main padded content div (pt-16 md:pt-0 md:pl-20) */} 
+
+          {/* Render Footer OUTSIDE the padded content div */}
+          <Footer /> 
+
         </>
       )}
     </main>

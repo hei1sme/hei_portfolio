@@ -21,7 +21,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const { title, date, imageUrl, mdxSource } = post;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 relative">
+    <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24 relative">
       <VerticalNavigation />
 
       {/* Content Area */}
@@ -40,8 +40,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         />
       </div>
 
-      {/* Footer */}
-      <div className="container mx-auto px-4 mt-24 max-w-3xl">
+      {/* Footer - MOVED OUTSIDE the constrained content div */}
+      {/* <div className="container mx-auto px-4 mt-24 max-w-3xl"> */}
+      {/*   <Footer /> */}
+      {/* </div> */}
+      <div className="w-full mt-24"> {/* Added a full-width wrapper for spacing */}
         <Footer />
       </div>
     </main>

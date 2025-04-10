@@ -7,6 +7,7 @@ import { MDXRemote } from 'next-mdx-remote';
 interface BlogPostClientContentProps {
   title: string;
   date: string;
+  author?: string; // Add optional author prop
   imageUrl?: string; // Optional image URL
   mdxSource: any; // Serialized MDX source
 }
@@ -14,6 +15,7 @@ interface BlogPostClientContentProps {
 const BlogPostClientContent: React.FC<BlogPostClientContentProps> = ({
   title,
   date,
+  author, // Destructure author prop
   imageUrl,
   mdxSource,
 }) => {
@@ -29,7 +31,12 @@ const BlogPostClientContent: React.FC<BlogPostClientContentProps> = ({
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-purple-300 to-purple-500">
           {title}
         </h1>
-        <p className="text-lg text-gray-400 text-center">{date}</p>
+        {/* Display Date and Author */}
+        <div className="text-lg text-gray-400 text-center mb-4">
+          <span>{date}</span>
+          {author && <span className="mx-2">•</span>} 
+          {author && <span>By {author}</span>}
+        </div>
         {/* Optionally display image here if needed */}
         {/* {imageUrl && <img src={imageUrl} alt={title} className="rounded-lg my-6 shadow-md"/>} */}
       </motion.div>

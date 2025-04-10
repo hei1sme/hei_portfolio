@@ -18,25 +18,25 @@ interface Project {
 // --- IMPORTANT: Replace with your REAL project data --- 
 const projects: Project[] = [
   {
-    title: "AI Image Classifier",
-    description: "Developed a deep learning model using CNNs to classify images into various categories with high accuracy. Explored data augmentation techniques.",
-    technologies: ["Python", "TensorFlow", "Keras", "OpenCV"],
+    title: "Employee Attrition Predictor",
+    description: "Developed a Logistic Regression model to predict employee attrition using demographic, financial, and job-related features. Includes data preprocessing techniques for normalization, encoding, and balancing.",
+    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "SciPy"],
     image: "/images/placeholder-project.png", // Replace!
-    githubUrl: "https://github.com/YOUR_GITHUB/your-repo-1", // Replace!
+    githubUrl: "https://github.com/hei1sme/EmployeeAttritionPredictor"
   },
   {
     title: "NLP Sentiment Analysis",
     description: "Built an NLP application for sentiment analysis on text data, utilizing techniques like TF-IDF and machine learning classifiers.",
     technologies: ["Python", "NLTK", "Scikit-learn", "Flask"],
     image: "/images/placeholder-project.png", // Replace!
-    githubUrl: "https://github.com/YOUR_GITHUB/your-repo-2", // Replace!
+    githubUrl: "https://github.com/", // Replace!
   },
   {
     title: "Recommendation Engine",
     description: "Designed a content-based recommendation system suggesting items based on user preferences and historical interaction data.",
     technologies: ["Python", "Pandas", "Scikit-learn", "Surprise"],
     image: "/images/placeholder-project.png", // Replace!
-    githubUrl: "https://github.com/YOUR_GITHUB/your-repo-3", // Replace!
+    githubUrl: "https://github.com/", // Replace!
     liveUrl: "#" // Replace with live link if available
   },
   // Add more projects...

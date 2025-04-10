@@ -9,6 +9,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'; // Import ParallaxProv
 // Import slick-carousel styles
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import CustomCursor from './components/CustomCursor'; // Import CustomCursor
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,10 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
+    <html lang="en" className="bg-black"> {/* Ensure html has base background */}
+      <body className={`${inter.className} cursor-none`}> {/* Apply cursor-none to body */}
         <ThemeProvider>
           <ParallaxProvider> {/* Wrap with ParallaxProvider */}
+            <CustomCursor /> {/* Add CustomCursor here */}
             {/* <ParticleBackground /> */}
             {children} {/* Main content should render on top */}
           </ParallaxProvider>

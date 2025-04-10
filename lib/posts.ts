@@ -38,6 +38,7 @@ export interface PostMetadata {
   slug: string;
   title: string;
   date: string;
+  author?: string;
   excerpt: string;
   imageUrl?: string;
   // Add any other frontmatter fields you expect here
@@ -95,6 +96,7 @@ export function getSortedPostsData(): PostMetadata[] {
         slug,
         title: matterResult.data.title || 'Untitled Post',
         date: matterResult.data.date ? String(matterResult.data.date) : new Date().toISOString().split('T')[0],
+        author: matterResult.data.author || 'Unknown Author',
         excerpt: matterResult.data.excerpt || '',
         imageUrl: matterResult.data.imageUrl || null,
         // Add defaults or checks for other expected frontmatter fields
@@ -185,6 +187,7 @@ export async function getPostData(slug: string): Promise<PostData | null> {
     slug,
     title: data.title || 'Untitled Post',
     date: data.date ? String(data.date) : new Date().toISOString().split('T')[0],
+    author: data.author || 'Unknown Author',
     excerpt: data.excerpt || '',
     imageUrl: data.imageUrl || null,
     mdxSource,

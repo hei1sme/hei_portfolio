@@ -14,14 +14,14 @@ export default async function BlogPage() {
   const blogPosts = getSortedPostsData(); // Fetch data on the server
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 relative">
+    <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24 relative">
       <VerticalNavigation />
 
       {/* Render the client component, passing the fetched data */}
       <BlogListClient posts={blogPosts} />
 
       {/* Footer */} 
-      <div className="container mx-auto px-4 mt-24">
+      <div className="container mx-auto px-4 mt-24 max-w-full">
         <Footer /> 
       </div>
     </main>

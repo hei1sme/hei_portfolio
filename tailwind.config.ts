@@ -6,6 +6,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './content/**/*.{md,mdx}', // Ensure content directory is included for prose styles
   ],
   darkMode: 'class',
   theme: {
@@ -26,6 +27,28 @@ const config: Config = {
           '950': '#000000',
         },
       },
+      typography: (theme: (path: string) => any) => ({
+        DEFAULT: {
+          css: {
+            // Add base styles if needed
+          },
+        },
+        invert: { // Apply styles to prose-invert (used in your BlogPostClientContent)
+          css: {
+            // Target images within the prose-invert scope
+            img: {
+              borderRadius: theme('borderRadius.lg'), // Use theme value for rounded-lg
+              // Add glow effect using box-shadow
+              boxShadow: `0 0 15px 3px ${theme('colors.purple.500') / 0.4}`,
+              // Example with less intensity: 
+              // boxShadow: `0 0 10px 2px ${theme('colors.purple.600') / 0.3}`,
+            },
+            // Add any other inverted prose overrides here
+          },
+        },
+        // You can define other custom prose modifiers if needed
+        // custom: { css: { ... } }
+      }),
     },
   },
   plugins: [

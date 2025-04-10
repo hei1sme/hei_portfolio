@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 
   return (
     <motion.footer 
-      className="py-8 bg-black text-gray-400 mt-16"
+      className="py-8 text-gray-400 mt-16"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center space-x-6 mb-4">
           <motion.a
-            href="https://linkedin.com/in/YOUR_LINKEDIN" // Replace with actual link
+            href="https://linkedin.com/in/le-nguyen-gia-hung/" // Replace with actual link
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-400 transition-colors"
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             <FaLinkedin size={24} />
           </motion.a>
           <motion.a
-            href="https://github.com/YOUR_GITHUB" // Replace with actual link
+            href="https://github.com/hei1sme" // Replace with actual link
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-400 transition-colors"
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             <FaGithub size={24} />
           </motion.a>
           <motion.a
-            href="https://instagram.com/YOUR_INSTAGRAM" // Replace with actual link
+            href="https://www.instagram.com/hei.isme/" // Replace with actual link
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-400 transition-colors"
