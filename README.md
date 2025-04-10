@@ -1,4 +1,4 @@
-"""# Personal Portfolio - Le Nguyen Gia Hung
+# Personal Portfolio - Le Nguyen Gia Hung
 
 This repository contains the source code for the personal portfolio website of Le Nguyen Gia Hung, an undergraduate AI student. The website showcases personal information, educational background, projects, skills, and contact details.
 
@@ -78,7 +78,7 @@ hei_portfolio_w/
 ```
 
 ##  Maintaners
-- Le Nguyen Gia Hung ([@heihachi88](https://github.com/heihachi88))
+- Le Nguyen Gia Hung
 
 ## 📜 License
 
