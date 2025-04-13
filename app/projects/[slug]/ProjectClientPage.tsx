@@ -89,10 +89,8 @@ const ProjectClientPage: React.FC<ProjectClientPageProps> = ({ mdxSource, frontm
            transition={{ delay: 0.2, duration: 0.5 }}
            className="mb-8"
          >
-           <Link href="/#projects" legacyBehavior>
-                <a className="text-teal-400 hover:text-teal-300 font-mono inline-flex items-center transition-colors">
-                   &lt; Back to Projects
-                </a>
+           <Link href="/#projects" className="text-teal-400 hover:text-teal-300 font-mono inline-flex items-center transition-colors">
+             &lt; Back to Projects
            </Link>
          </motion.div>
 
@@ -138,7 +136,7 @@ const ProjectClientPage: React.FC<ProjectClientPageProps> = ({ mdxSource, frontm
               )}
 
              {/* Links */}
-             <div className="flex space-x-4">
+             <div className="flex flex-col gap-3">
                  {frontmatter.liveUrl && (
                      <a href={frontmatter.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-teal-600 hover:bg-teal-500 text-white font-mono px-4 py-2 rounded text-sm transition-colors">
                          <FaExternalLinkAlt /> Live Demo
