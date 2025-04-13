@@ -3,100 +3,118 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload, FaEnvelope } from 'react-icons/fa';
-import { Parallax } from 'react-scroll-parallax';
 import Image from 'next/image';
 
 const About: React.FC = () => {
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        delay: i * 0.2, // Stagger delay for each paragraph
-        duration: 0.6,
+        staggerChildren: 0.1,
       },
-    }),
+    },
+  };
+
+  const lineVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <section className="py-24 text-white overflow-hidden w-full flex justify-center" id="about">
+    <section className="py-24 text-white overflow-hidden w-full flex justify-center min-h-screen" id="about">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-4xl font-bold mb-16 text-center font-mono relative bg-clip-text text-transparent bg-gradient-to-b from-purple-300 to-purple-500"
-          initial={{ opacity: 0, y: -20, rotate: -3 }}
-          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+          className="text-4xl font-bold mb-16 text-left font-mono relative bg-clip-text text-transparent bg-gradient-to-b from-purple-300 to-purple-500 pl-4 border-l-4 border-purple-500"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          About Me
-          {/* Optional: Keep or remove the underline span based on preference */}
-          {/* <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 h-1 w-20 bg-gradient-to-r from-purple-500 to-purple-700"></span> */}
+          ./AboutMe.tsx
         </motion.h2>
         
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
-          <Parallax speed={-10} className="flex-shrink-0">
+        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12 bg-gray-900/30 border border-gray-800/50 rounded-lg p-6 md:p-8 shadow-lg">
+          <motion.div 
+            className="w-32 h-32 md:w-40 md:h-40 relative rounded-lg overflow-hidden border-2 border-purple-700 shadow-md flex-shrink-0 mt-2"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Image 
+              src="/profile.png" 
+              alt="Profile Icon" 
+              layout="fill"
+              objectFit="cover"
+            />
+          </motion.div>
+
+          <motion.div 
+            className="flex-1 font-mono text-sm md:text-base leading-relaxed text-gray-300 space-y-2"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.p variants={lineVariants} className="text-gray-500">{ '// hei.isme/bio' }</motion.p> 
+            <motion.p variants={lineVariants}>&nbsp;</motion.p>
+            
+            <motion.p variants={lineVariants}><span className="text-purple-400">const</span> <span className="text-teal-400">currentStatus</span> = <span className="text-gray-100">{'{'}</span></motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">university</span>: <span className="text-orange-400">"FPT University HCMC"</span>,</motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">major</span>: <span className="text-orange-400">"Artificial Intelligence"</span>,</motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">passion</span>: <span className="text-orange-400">"Solving real-world challenges with intelligent systems"</span></motion.p>
+            <motion.p variants={lineVariants}><span className="text-gray-100">{'}'};</span></motion.p>
+            <motion.p variants={lineVariants}>&nbsp;</motion.p>
+
+            <motion.p variants={lineVariants} className="text-gray-500">{ '// Key focus areas and tools' }</motion.p>
+            <motion.p variants={lineVariants}><span className="text-purple-400">const</span> <span className="text-teal-400">techStack</span> = <span className="text-gray-100">{'{'}</span></motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">coreConcepts</span>: [<span className="text-orange-400">"Computer Vision"</span>, <span className="text-orange-400">"AIoT"</span>, <span className="text-orange-400">"Reinforcement Learning"</span>],</motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">languages</span>: [<span className="text-orange-400">"Python"</span>, <span className="text-orange-400">"JavaScript"</span>],</motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">mlLibs</span>: [<span className="text-orange-400">"TensorFlow"</span>, <span className="text-orange-400">"PyTorch"</span>, <span className="text-orange-400">"Scikit-learn"</span>]</motion.p>
+            <motion.p variants={lineVariants}><span className="text-gray-100">{'}'};</span></motion.p>
+            <motion.p variants={lineVariants}>&nbsp;</motion.p>
+
+            <motion.p variants={lineVariants} className="text-gray-500">{ '// Ambition and approach' }</motion.p>
+            <motion.p variants={lineVariants}><span className="text-purple-400">const</span> <span className="text-teal-400">philosophy</span> = <span className="text-gray-100">{'{'}</span></motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">commitment</span>: <span className="text-orange-400">"Continuous learning & growth"</span>,</motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">goal</span>: <span className="text-orange-400">"Contribute to impactful AI research"</span>,</motion.p>
+            <motion.p variants={lineVariants} className="pl-4"><span className="text-teal-500">method</span>: <span className="text-orange-400">"Tackle diverse challenges through technology"</span></motion.p>
+            <motion.p variants={lineVariants}><span className="text-gray-100">{'}'};</span></motion.p>
+            <motion.p variants={lineVariants}>&nbsp;</motion.p>
+
             <motion.div 
-              className="w-80 h-80 md:w-96 md:h-96 relative rounded-full overflow-hidden border-4 border-purple-600 shadow-lg"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 pt-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-gray-900/50 flex items-center justify-center">
-                {/* Replace the SVG below with your image */}
-                <Image 
-                  src="/profile.png" // <-- CHANGE THIS to the path relative to the public folder (e.g., /my-image.jpg)
-                  alt="Profile Picture" // <-- CHANGE THIS to a descriptive alt text
-                  width={1000} // <-- CHANGE THIS to the actual width of your image
-                  height={1000} // <-- CHANGE THIS to the actual height of your image
-                />
-              </div>
+              <motion.button 
+                className="flex items-center justify-center gap-2 px-5 py-2.5 bg-purple-600/80 hover:bg-purple-500/80 text-gray-100 font-mono rounded-md shadow-md transition-colors duration-200"
+                whileHover={{ scale: 1.03, transition: { type: "spring", stiffness: 300 } }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => window.open('/HungLNG_Resume.pdf', '_blank')}
+              >
+                <span className="text-purple-300">$&gt;</span> get_resume.sh <FaDownload className="ml-1" />
+              </motion.button>
+              <motion.button 
+                className="flex items-center justify-center gap-2 px-5 py-2.5 border border-purple-500 hover:bg-purple-500/10 text-purple-300 font-mono rounded-md transition-colors duration-200"
+                whileHover={{ scale: 1.03, transition: { type: "spring", stiffness: 300 } }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                 <span className="text-purple-300">$&gt;</span> open_contact_form <FaEnvelope className="ml-1" />
+              </motion.button>
             </motion.div>
-          </Parallax>
-
-          <div className="flex-1 flex flex-col justify-center">
-            <div className="max-w-3xl mx-auto w-full text-center md:text-left">
-              <motion.p 
-                className="text-base mb-6 text-gray-300 leading-relaxed"
-                style={{ textAlign: "justify" }}
-                custom={0} variants={textVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              >
-                Currently pursuing a degree in Artificial Intelligence at FPT University Ho Chi Minh City, I am passionate about leveraging intelligent systems to address real-world challenges. My studies often involve applying concepts like Computer Vision, AIoT, and Reinforcement Learning to optimize urban systems such as traffic flow.
-              </motion.p>
-              <motion.p 
-                className="text-base mb-8 text-gray-300 leading-relaxed"
-                style={{ textAlign: "justify" }}
-                custom={1} variants={textVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              >
-                Proficient in Python and grounded in machine learning fundamentals, I am committed to continuous learning and aspire to contribute to impactful AI research. I aim to tackle diverse challenges and make a positive difference through technology while actively seeking opportunities to grow and apply my skills.
-              </motion.p>
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-                custom={2} variants={textVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              >
-                {/* Enhanced Buttons with Shine */}
-                <motion.button 
-                  className="btn-shine flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-lg shadow-md transition-all duration-300 ease-in-out hover:from-purple-600 hover:to-purple-800 hover:shadow-lg"
-                  whileHover={{ scale: 1.05, y: -3, transition: { type: "spring", stiffness: 300, damping: 10 } }}
-                  whileTap={{ scale: 0.95, transition: { type: "spring", stiffness: 400, damping: 15 } }}
-                  // onClick={() => window.open('/path/to/your/cv.pdf', '_blank')} // Add actual CV link
-                >
-                  <FaDownload />
-                  Download CV
-                </motion.button>
-                <motion.button 
-                  className="flex items-center justify-center gap-2 px-6 py-3 border border-purple-500 text-purple-400 font-semibold rounded-lg transition-all duration-300 ease-in-out hover:bg-purple-500/10 hover:text-purple-300 hover:shadow-md"
-                  whileHover={{ scale: 1.05, y: -3, transition: { type: "spring", stiffness: 300, damping: 10 } }}
-                  whileTap={{ scale: 0.95, transition: { type: "spring", stiffness: 400, damping: 15 } }}
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} // Scrolls to contact section
-                >
-                  <FaEnvelope />
-                  Contact Me
-                </motion.button>
-              </motion.div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

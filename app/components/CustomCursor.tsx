@@ -51,7 +51,7 @@ const CustomCursor: React.FC = () => {
   }, [mouseX, mouseY]);
 
   // Define sizes for normal and hover states
-  const mainCursorSize = isHoveringInteractive ? 32 : 10; // Slightly smaller main dot
+  const mainCursorSize = isHoveringInteractive ? 50 : 15; // Slightly smaller main dot
   const trailSize = isHoveringInteractive ? 20 : 30; // Trail shrinks slightly on hover
   const trailOpacity = isHoveringInteractive ? 0.3 : 0.4; // Trail slightly less opaque on hover
 

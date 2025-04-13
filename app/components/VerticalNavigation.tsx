@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import { FaHome, FaUser, FaBriefcase, FaCog, FaEnvelope, FaUniversity, FaMoon, FaSun, FaFeatherAlt, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaUser, FaBriefcase, FaCog, FaEnvelope, FaUniversity, FaMoon, FaSun, FaFeatherAlt, FaBars, FaTimes, FaHistory } from 'react-icons/fa';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,9 +11,10 @@ import { usePathname } from 'next/navigation';
 const navItems = [
   { id: 'home', label: 'Home', icon: <FaHome />, path: '/' },
   { id: 'about', label: 'About', icon: <FaUser />, path: '#about' },
-  { id: 'education', label: 'Education', icon: <FaUniversity />, path: '#education' },
   { id: 'projects', label: 'Projects', icon: <FaBriefcase />, path: '#projects' },
   { id: 'skills', label: 'Skills', icon: <FaCog />, path: '#skills' },
+  { id: 'experience', label: 'Experience', icon: <FaHistory />, path: '#experience' },
+  { id: 'education', label: 'Education', icon: <FaUniversity />, path: '#education' },
   { id: 'blog', label: 'Blog', icon: <FaFeatherAlt />, path: '/blog' },
   { id: 'contact', label: 'Contact', icon: <FaEnvelope />, path: '#contact' },
 ];

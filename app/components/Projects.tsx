@@ -76,11 +76,16 @@ const Projects: React.FC = () => {
        {/* Remove container mx-auto px-4 if you want edge-to-edge slider */}
       {/* <div className="container mx-auto px-4"> */}
         <div className="container mx-auto px-4"> {/* Keep container for title only */} 
-          <h2 className="text-4xl font-bold mb-16 text-center font-mono relative bg-clip-text text-transparent bg-gradient-to-b from-purple-300 to-purple-500">
+          <motion.h2 
+            // Apply the same style as About.tsx title
+            className="text-4xl font-bold mb-16 text-left font-mono relative pl-4 border-l-4 border-purple-500 text-purple-300" // Removed gradient, added text color
+            initial={{ opacity: 0, y: -20 }} // Removed rotate
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             Featured Projects
-            {/* Underline removed/commented */}
-            {/* <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 h-1 w-20 bg-gradient-to-r from-purple-500 to-purple-700"></span> */}
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Slider container - remove max-width to make it wider */} 

@@ -44,11 +44,15 @@ const Contact: React.FC = () => {
   return (
     <section className="py-20 text-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-16 text-center font-mono relative bg-clip-text text-transparent bg-gradient-to-b from-purple-300 to-purple-500">
+        <motion.h2 
+          className="text-4xl font-bold mb-16 text-left font-mono relative pl-4 border-l-4 border-purple-500 text-purple-300"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           Get In Touch
-          {/* Underline removed/commented */}
-          {/* <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 h-1 w-20 bg-purple-500"></span> */}
-        </h2>
+        </motion.h2>
         
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Left Column: Contact Info & Socials */}

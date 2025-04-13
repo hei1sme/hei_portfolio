@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 import EntranceAnimation from './components/EntranceAnimation';
 import Hero from './components/Hero';
 import About from './components/About';
-import Education from './components/Education';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import VerticalNavigation from './components/VerticalNavigation';
 import Footer from './components/Footer';
@@ -54,7 +55,9 @@ export default function Home() {
           <VerticalNavigation />
           {/* Main content wrapper with padding to avoid navbar */}
           <div className="pt-16 md:pt-0 md:pl-20">
-            {/* Hero section - full width within the padded area */}
+            {/* Section Order: Hero -> About -> Projects -> Skills -> Experience -> Education -> Contact */}
+            
+            {/* 1. Hero */}
             <motion.div
               id="home"
               className="pr-4" // Right padding
@@ -65,7 +68,7 @@ export default function Home() {
               <Hero />
             </motion.div>
 
-            {/* About Section - Constrained and Centered */}
+            {/* 2. About */}
             <motion.div
               id="about"
               className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
@@ -77,19 +80,7 @@ export default function Home() {
               <About />
             </motion.div>
             
-            {/* Education Section - Constrained and Centered */}
-            <motion.div
-              id="education"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Education />
-            </motion.div>
-
-            {/* Projects Section - Constrained and Centered */}
+            {/* 3. Projects */}
             <motion.div
               id="projects"
               className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
@@ -101,7 +92,7 @@ export default function Home() {
               <Projects />
             </motion.div>
 
-            {/* Skills Section - Constrained and Centered */}
+            {/* 4. Skills */}
             <motion.div
               id="skills"
               className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
@@ -113,7 +104,31 @@ export default function Home() {
               <Skills />
             </motion.div>
 
-            {/* Contact Section - Constrained and Centered */}
+            {/* 5. Experience (New) */}
+            <motion.div
+              id="experience"
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Experience />
+            </motion.div>
+
+            {/* 6. Education */}
+            <motion.div
+              id="education"
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Education />
+            </motion.div>
+
+            {/* 7. Contact */}
             <motion.div
               id="contact"
               className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
