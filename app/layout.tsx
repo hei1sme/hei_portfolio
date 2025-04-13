@@ -10,6 +10,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'; // Import ParallaxProv
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import CustomCursor from './components/CustomCursor'; // Import CustomCursor
+import VerticalNavigation from './components/VerticalNavigation'; // Keep VerticalNavigation
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,12 +24,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-black"> {/* Ensure html has base background */}
-      <body className={`${inter.className} cursor-none`}> {/* Apply cursor-none to body */}
+      <body className={`${inter.className} cursor-none bg-black relative`}> {/* Apply cursor-none to body */}
         <ThemeProvider>
           <ParallaxProvider> {/* Wrap with ParallaxProvider */}
             <CustomCursor /> {/* Add CustomCursor here */}
-            {/* <ParticleBackground /> */}
-            {children} {/* Main content should render on top */}
+            <VerticalNavigation /> 
+            {/* Render children directly, add padding to avoid nav */}
+            <main className="pl-20 w-full min-h-screen">
+               {children} 
+            </main>
           </ParallaxProvider>
         </ThemeProvider>
       </body>
