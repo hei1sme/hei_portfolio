@@ -121,7 +121,7 @@ const Experience: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            ./Experience.timeline {/* Updated title */}
+            Experience {/* Updated title */}
           </motion.h2>
 
           {/* Container for timeline items and the connecting bar */}
