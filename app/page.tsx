@@ -10,7 +10,6 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
-import VerticalNavigation from './components/VerticalNavigation';
 import Footer from './components/Footer';
 
 // Define metadata values
@@ -52,9 +51,8 @@ export default function Home() {
       {/* Conditionally render main content */}
       {isEntranceComplete && (
         <>
-          <VerticalNavigation />
-          {/* Main content wrapper with padding to avoid navbar */}
-          <div className="pt-16 md:pt-0 md:pl-20">
+          {/* Main content wrapper - Removed md:pl-20, keep pt for mobile nav offset */}
+          <div className="pt-16 md:pt-0">
             {/* Section Order: Hero -> About -> Projects -> Skills -> Experience -> Education -> Contact */}
             
             {/* 1. Hero */}
@@ -71,7 +69,7 @@ export default function Home() {
             {/* 2. About */}
             <motion.div
               id="about"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -83,7 +81,7 @@ export default function Home() {
             {/* 3. Projects */}
             <motion.div
               id="projects"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -95,7 +93,7 @@ export default function Home() {
             {/* 4. Skills */}
             <motion.div
               id="skills"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -107,7 +105,7 @@ export default function Home() {
             {/* 5. Experience (New) */}
             <motion.div
               id="experience"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -119,7 +117,7 @@ export default function Home() {
             {/* 6. Education */}
             <motion.div
               id="education"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -131,7 +129,7 @@ export default function Home() {
             {/* 7. Contact */}
             <motion.div
               id="contact"
-              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" // Centering classes
+              className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -139,7 +137,7 @@ export default function Home() {
             >
               <Contact />
             </motion.div>
-          </div> {/* End of the main padded content div (pt-16 md:pt-0 md:pl-20) */} 
+          </div> {/* End of the main content div */}
 
           {/* Render Footer OUTSIDE the padded content div */}
           <Footer /> 
